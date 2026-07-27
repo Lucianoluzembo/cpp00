@@ -6,7 +6,7 @@
 #    By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/28 12:08:02 by lluzembo          #+#    #+#              #
-#    Updated: 2026/07/27 17:51:16 by lluzembo         ###   ########.fr        #
+#    Updated: 2026/07/27 20:26:16 by lluzembo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDE = utils.hpp
 
-SRC = ./main.cpp add_contact.cpp contact.cpp
+SRC = ./main.cpp add_contact.cpp contact.cpp search.cpp
 
 OBJS = $(SRC:.cpp=.o)
 

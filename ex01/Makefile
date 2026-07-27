@@ -6,7 +6,7 @@
 #    By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/28 12:08:02 by lluzembo          #+#    #+#              #
-#    Updated: 2026/07/27 13:10:41 by lluzembo         ###   ########.fr        #
+#    Updated: 2026/07/27 17:05:13 by lluzembo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ./main.cpp
+INCLUDE = utils.hpp
+
+SRC = ./main.cpp add_contact.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -24,6 +26,8 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+
+$(OBJS):$(INCLUDE)
 
 clean:
 	rm -rf $(OBJS)

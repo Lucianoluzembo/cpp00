@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/27 14:18:42 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 17:44:54 by lluzembo         ###   ########.fr       */
+/*   Created: 2026/07/27 16:53:44 by lluzembo          #+#    #+#             */
+/*   Updated: 2026/07/27 17:38:54 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#ifndef UTILS_HPP
+# define UTILS_HPP
+# include <iostream>
+# include <cstdlib>
+# include <cstring>
+# include "contact.hpp"
 
-std::string Contact::getName()
-{
-    return name;
-}
+void    add_contact();
 
-void    Contact::setName(std::string newName)
-{
-    name = newName;
-}
-
-void    Contact::setNickname(std::string newNickname)
-{
-    nickname = newNickname;
-}
-
-void    Contact::setSurname(std::string newSurname)
-{
-    surname = newSurname;
-}
-
+#endif

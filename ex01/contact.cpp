@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 14:18:42 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 17:44:54 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:48:39 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@ void    Contact::setNickname(std::string newNickname)
 void    Contact::setSurname(std::string newSurname)
 {
     surname = newSurname;
+}
+
+void        Contact::setPhonenumber(std::string newPhonenumber)
+{
+    phonenumber = newPhonenumber;
 }
 

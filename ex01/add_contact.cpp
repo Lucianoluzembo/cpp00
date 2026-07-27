@@ -74,14 +74,12 @@ void    save_number(Contact contact)
     std::getline(std::cin, phonenumber);
     contact.setPhonenumber(phonenumber);
 }
-void    add_contact()
+void    add_contact(Contact contact)
 {
         std::string surname;
         std::string nickname;
         std::string phonenumber;
         std::string chose;
-    
-        Contact contact;
         
         chose= "1";
         while (chose == "1")

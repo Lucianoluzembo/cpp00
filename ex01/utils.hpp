@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 16:53:44 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 17:38:54 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:58:48 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 # include <cstring>
 # include "contact.hpp"
 
-void    add_contact();
+void    add_contact(Contact contact);
 
 #endif

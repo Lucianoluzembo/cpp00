@@ -6,15 +6,29 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:49:31 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 18:25:43 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:59:26 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
+std::string toUpper(std::string str)
+{
+    size_t i = 0;
+
+    while (str.length() > i)
+    {
+        if (str[i] >= 'a' && str[i] <= 'z')
+            str[i] -= 32;
+        i++;
+    }
+    return (str);
+}
+
 int main(void)
 {
     std::string op;
+    Contact contact;
 
     while(true)
     {
@@ -28,15 +42,16 @@ int main(void)
         std::cout << "[  EXIT  ] -- Exit and clean contacts\n";
         std::getline(std::cin, op);
 
-        if (op == "ADD" || op == "add")
-        {   
-            add_contact();
-        }
-        else if (op == "SEARCH" || op == "search")
+        op = toUpper(op);
+        if (op == "ADD")
+            add_contact(contact);
+        else if (op == "SEARCH")
             std::cout << "Boa Vamos Buscar por dados\n";
-        else if (op == "EXIT" || op == "exit")
+        else if (op == "EXIT")
         {
-            std::cout << "Boa Vamos saindo";
+            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+            std::cout << "  ⏻ Saindo do phonebook Mr bug 1.0...\n";
+            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
             break ;
         }
         else

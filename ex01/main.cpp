@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:49:31 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 17:38:59 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:25:43 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
         std::cout << "[   ADD  ] -- Create a new contact\n";
         std::cout << "[ SEARCH ] -- Find Some Contact\n";
         std::cout << "[  EXIT  ] -- Exit and clean contacts\n";
-        std::cin >> op;
+        std::getline(std::cin, op);
 
         if (op == "ADD" || op == "add")
         {   

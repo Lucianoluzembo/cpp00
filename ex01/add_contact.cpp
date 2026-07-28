@@ -1,6 +1,26 @@
 #include "utils.hpp"
 
+int valid_number(std::string str)
+{
+    size_t  i;
 
+    if (!(str.length() >= 1 && str.length() <= 15))
+    {
+        std::cout << "invalid number size use [1 - 15]\n";
+        return (0);
+    }
+    i = 0;
+    while (i < str.length())
+    {
+        if (!std::isdigit(str[i]))
+        {
+            std::cout << "Invalid char on number use just digit\n";
+            return (0);
+        }
+        i++;
+    }
+    return (1);
+}
 
 
 int valid_input(std::string str)
@@ -98,10 +118,12 @@ int    save_number(Contact &contact)
     std::string phonenumber;
 
     std::cout << "Write the phone number:\t";
-    if (std::getline(std::cin, phonenumber))
+    if (!std::getline(std::cin, phonenumber))
         return (0);
     if (!valid_input(phonenumber))
         return (exit_progam_message(), 0);
+    if (!valid_number(phonenumber))
+        return (save_number(contact));
     contact.setPhonenumber(phonenumber);
     return (1);
 }
@@ -110,33 +132,18 @@ int    add_contact(Contact &contact)
         std::string surname;
         std::string nickname;
         std::string phonenumber;
-        std::string chose;
         
-        chose= "1";
-        while (chose != "x")
-        {
-            std::system("clear");
-            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-            std::cout << "[   ADD  ] -- Create a new contact\n";
-            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-            if (!save_name(contact))
-                return (0);
-            else if (!save_surname(contact))
-                return (0);
-            else if (!save_nickname(contact))
-                return (0);
-            else if (!save_number(contact))
-                return (0);
-            std::system("clear");
-            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-            std::cout << "     Congradulations new contact saved 🎉\n";
-            std::cout << "       Whats do you wanna do more?\n";
-            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-            std::cout << "[any key] -- Continue adding\n";
-            std::cout << "[   x   ] -- Back to menu\n";
-            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-            if (!std::getline(std::cin, chose))
-                return (0);
-        }
+        std::system("clear");
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        std::cout << "[   ADD  ] -- Create a new contact\n";
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        if (!save_name(contact))
+            return (0);
+        else if (!save_surname(contact))
+            return (0);
+        else if (!save_nickname(contact))
+            return (0);
+        else if (!save_number(contact))
+            return (0);
         return (1);
 }

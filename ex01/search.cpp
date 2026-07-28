@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 19:57:25 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 15:45:55 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 18:56:03 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,16 @@ void    print_phone_book_collum(std::string str)
         std::cout << "|";
 }
 
+void print_phone_book_indice(int i)
+{
+    int  j = 9;
+
+    std::cout << "|";
+    while (j--)
+        std::cout << " ";
+    std::cout << i << "|";
+}
+
 int    show_all_contacts(Contact &contact)
 {
     std::string name;
@@ -60,72 +70,35 @@ int    show_all_contacts(Contact &contact)
     std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
     std::cout << "|   Phone Book mr bug 1.0   My contacts     |\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
-    std::cout << "|      NAME|   SURNAME|  NICKNAME|     PHONE|\n";
+    std::cout << "|     INDEX|      NAME|   SURNAME|  NICKNAME|\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
     size_t i = 0;
     while(i < list_size)
     {
-        std::cout << "|";
+        print_phone_book_indice(i);
         print_phone_book_collum(name);
         print_phone_book_collum(surname);
         print_phone_book_collum(nickname);
-        print_phone_book_collum(phone);
         std::cout << "\n+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
         i++;
     }
 
     while (true)
     {
-        std::cout << "[1 - 8] to see specify contact\n";
-        std::cout << "[  x  ] back to search menu \n";
+        std::cout << "[0 - " << list_size - 1 << "] to see specify contact\n";
         if(!std::getline(std::cin, op))
             return (0);
         if (op.length() == 1 && op[0] >= '1' && op[0] <= '8')
             see_specific_contact(op[0] - 48);
-        else if (op.length() == 1 && op[0] == 'x')
-            break ;
         else
-            std::cout << "Invalid option...\n";
+            return (std::cout << "Invalid option...\n", 1);
     }
-    return (1);
-}
-
-void    find_some_contact(Contact &contact)
-{
-    std::system("clear");
-    std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
-    std::cout << "|   Phone Book mr bug 1.0   Search contact  |\n";
-    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
-    std::cout << "|      NAME|   SURNAME| NICK NAME|     PHONE|\n";
-    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
-    std::system("sleep 5");
-    (void)contact;
 }
 
 int    search(Contact &contact)
 {
     std::string op;
 
-    while (true)
-    {
-        std::system("clear");
-        std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
-        std::cout << "|   [ SEARCH ] -- Find yours contacts |\n";
-        std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
-        std::cout << " [0] See all contacts\n";
-        std::cout << " [1] Search some contact\n";
-        std::cout << " [x] back to main menu\n";
-        if(!std::getline(std::cin, op))
-            return (0);
-        if (op == "0")
-        {
-            if (!show_all_contacts(contact))
-                    return (0);
-        }
-        else if (op == "1")
-            find_some_contact(contact);
-        else if (op == "x")
-            break ;
-    }
+    show_all_contacts(contact);
     return (1);
 }

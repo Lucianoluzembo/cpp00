@@ -6,15 +6,26 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 19:57:25 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 19:20:39 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 19:51:12 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
-void    see_specific_contact(int id)
+int    see_specific_contact(Contact *contact, int id)
 {
-    std::cout << "ver contacto " << id << std::endl;
+    std::string name =  contact[id].getName();
+    if (name.empty())
+        return ((std::cout << "              data not found\n"), 0);
+    std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
+    std::cout << "|   Phone Book mr bug 1.0  contact      [" << id << "   |\n";
+    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
+    std::cout << " NAME : " << contact[id].getName() << "\n";
+    std::cout << " SURNAME : " << contact[id].getSurname() << "\n";
+    std::cout << " NICKNAME : " << contact[id].getNickname() << "\n";
+    std::cout << " PHONE NUMBER: " <<  contact[id].getPhoneNumber() << "\n";
+    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
+    return (1);
 }
 
 void    print_phone_book_collum(std::string str)
@@ -68,6 +79,7 @@ int    show_all_contacts(Contact *contact, int current)
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
     std::cout << "|     INDEX|      NAME|   SURNAME|  NICKNAME|\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
+
     while(i < current)
     {
         name = contact[i].getName();
@@ -81,14 +93,13 @@ int    show_all_contacts(Contact *contact, int current)
         std::cout << "\n+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
         i++;
     }
-
     while (true)
     {
         std::cout << "[0 - 7] to see specify contact\n";
         if(!std::getline(std::cin, op))
             return (0);
         if (op.length() == 1 && op[0] >= '1' && op[0] <= '8')
-            see_specific_contact(op[0] - 48);
+            see_specific_contact(contact, op[0] - 48);
         else
             return (std::cout << "Invalid option...\n", 1);
     }

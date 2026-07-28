@@ -6,24 +6,24 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:49:31 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 17:20:46 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 17:37:41 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
-std::string toUpper(std::string str)
-{
-    size_t i = 0;
+// std::string toUpper(std::string str)
+// {
+//     size_t i = 0;
 
-    while (str.length() > i)
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;
-        i++;
-    }
-    return (str);
-}
+//     while (str.length() > i)
+//     {
+//         if (str[i] >= 'a' && str[i] <= 'z')
+//             str[i] -= 32;
+//         i++;
+//     }
+//     return (str);
+// }
 
 int main(void)
 {
@@ -41,8 +41,7 @@ int main(void)
         std::cout << "[ SEARCH ] -- Find my Contacts\n";
         std::cout << "[  EXIT  ] -- Exit and clean contacts\n";
         if(!std::getline(std::cin, op))
-            return (1);
-        op = toUpper(op);
+            return (exit_progam_message(), 1);
         if (op == "ADD")
         {
             if (!add_contact(contact))

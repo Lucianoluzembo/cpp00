@@ -1,5 +1,25 @@
 #include "utils.hpp"
 
+
+
+
+int valid_input(std::string str)
+{
+    if (str.empty())
+        return (0);
+    size_t i = 0;
+    while (i < str.length())
+    {
+        if (std::iscntrl(str[i]))
+        {
+            std::cout << "Invalid control caracter\n";
+            return (0);
+        }
+        i++;
+    }
+    return (1);
+}
+
 int valid_name(std::string str)
 {
     size_t i;
@@ -34,6 +54,8 @@ int save_name(Contact &contact)
     std::cout << "Write the first name:\t";
     if(!std::getline(std::cin, firstname))
         return (exit_progam_message(), 0);
+    if (!valid_input(firstname))
+         return (exit_progam_message(), 0);
     if (!valid_name(firstname))
         return(save_name(contact));
     contact.setName(firstname);
@@ -46,6 +68,8 @@ int    save_surname(Contact &contact)
 
     std::cout << "Write the surname:\t";
     if (!std::getline(std::cin, surname))
+        return (exit_progam_message(), 0);
+    if (!valid_input(surname))
         return (exit_progam_message(), 0);
     if (!valid_name(surname))
         return (save_surname(contact));
@@ -60,6 +84,8 @@ int    save_nickname(Contact &contact)
     std::cout << "Write the nickname:\t";
     if (!std::getline(std::cin, nickname))
         return (exit_progam_message(), 0);
+    if (!valid_input(nickname))
+         return (exit_progam_message(), 0);
     if (nickname.empty())
         return(save_nickname(contact));
     contact.setNickname(nickname);
@@ -74,6 +100,8 @@ int    save_number(Contact &contact)
     std::cout << "Write the phone number:\t";
     if (std::getline(std::cin, phonenumber))
         return (0);
+    if (!valid_input(phonenumber))
+        return (exit_progam_message(), 0);
     contact.setPhonenumber(phonenumber);
     return (1);
 }

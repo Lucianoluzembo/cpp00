@@ -6,15 +6,15 @@ void save_name(Contact &contact)
     size_t         i;
 
     std::cout << "Write the first name:\t";
-    std::getline(std::cin, firstname);
-    
+    while(!std::getline(std::cin, firstname))
+
     i = 0;
     while(i < firstname.length())
     {
         if (std::strchr("0123456789 ", firstname[i]))
-            std::cout << "🟥Invalid name don't use number or space on name\n";
+            std::cout << "Invalid name don't use number or space on name\n";
         else if (firstname[i] == 92)
-             std::cout << "Ups\nInvalid name don't use \\ \n";
+                std::cout << "Ups\nInvalid name don't use \\ \n";
         i++;
     }
     contact.setName(firstname);
@@ -74,7 +74,7 @@ void    save_number(Contact &contact)
     std::getline(std::cin, phonenumber);
     contact.setPhonenumber(phonenumber);
 }
-void    add_contact(Contact &contact)
+int    add_contact(Contact &contact)
 {
         std::string surname;
         std::string nickname;
@@ -82,7 +82,7 @@ void    add_contact(Contact &contact)
         std::string chose;
         
         chose= "1";
-        while (chose == "1")
+        while (chose != "x")
         {
             std::system("clear");
             std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
@@ -98,9 +98,10 @@ void    add_contact(Contact &contact)
             std::cout << "     Congradulations new contact saved 🎉\n";
             std::cout << "       Whats do you wanna do more?\n";
             std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-            std::cout << "[0] -- Back to menu\n";
-            std::cout << "[1] -- Continue adding\n";
+            std::cout << "[any key] -- Continue adding\n";
+            std::cout << "[   x   ] -- Back to menu\n";
             std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
             std::getline(std::cin, chose);
         }
+        return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:49:31 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 20:28:36 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 14:46:12 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int main(void)
     while(true)
     {
         std::system("clear");
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        std::cout << "   Welcome to PhoneNook Mr Bug  1.0\n";
-        std::cout << "      Chose Some Option above\n ";
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
+        std::cout << "|   Welcome to PhoneNook Mr Bug  1.0  |\n";
+        std::cout << "|      Chose Some Option above        |\n";
+        std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
         std::cout << "[   ADD  ] -- Create a new contact\n";
         std::cout << "[ SEARCH ] -- Find my Contacts\n";
         std::cout << "[  EXIT  ] -- Exit and clean contacts\n";

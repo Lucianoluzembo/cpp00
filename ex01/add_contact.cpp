@@ -127,7 +127,7 @@ int    save_number(Contact &contact)
     contact.setPhonenumber(phonenumber);
     return (1);
 }
-int    add_contact(Contact &contact)
+int    add_contact(Contact *contact, int current)
 {
         std::string surname;
         std::string nickname;
@@ -137,13 +137,13 @@ int    add_contact(Contact &contact)
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         std::cout << "[   ADD  ] -- Create a new contact\n";
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        if (!save_name(contact))
+        if (!save_name(contact[current]))
             return (0);
-        else if (!save_surname(contact))
+        else if (!save_surname(contact[current]))
             return (0);
-        else if (!save_nickname(contact))
+        else if (!save_nickname(contact[current]))
             return (0);
-        else if (!save_number(contact))
+        else if (!save_number(contact[current]))
             return (0);
         return (1);
 }

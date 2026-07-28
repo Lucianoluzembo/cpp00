@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 19:57:25 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 18:56:03 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 19:20:39 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,29 +52,28 @@ void print_phone_book_indice(int i)
     std::cout << i << "|";
 }
 
-int    show_all_contacts(Contact &contact)
+int    show_all_contacts(Contact *contact, int current)
 {
     std::string name;
     std::string surname;
     std::string nickname;
     std::string phone;
     std::string op;
-    size_t list_size;
+    int         i = 0;
 
-    name = contact.getName();
-    surname = contact.getSurname();
-    nickname = contact.getNickname();
-    phone = contact.getPhoneNumber();
-    list_size = 3;
+
     std::system("clear");
     std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
     std::cout << "|   Phone Book mr bug 1.0   My contacts     |\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
     std::cout << "|     INDEX|      NAME|   SURNAME|  NICKNAME|\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
-    size_t i = 0;
-    while(i < list_size)
+    while(i < current)
     {
+        name = contact[i].getName();
+        surname = contact[i].getSurname();
+        nickname = contact[i].getNickname();
+        phone = contact[i].getPhoneNumber();
         print_phone_book_indice(i);
         print_phone_book_collum(name);
         print_phone_book_collum(surname);
@@ -85,7 +84,7 @@ int    show_all_contacts(Contact &contact)
 
     while (true)
     {
-        std::cout << "[0 - " << list_size - 1 << "] to see specify contact\n";
+        std::cout << "[0 - 7] to see specify contact\n";
         if(!std::getline(std::cin, op))
             return (0);
         if (op.length() == 1 && op[0] >= '1' && op[0] <= '8')
@@ -95,10 +94,10 @@ int    show_all_contacts(Contact &contact)
     }
 }
 
-int    search(Contact &contact)
+int    search(Contact *contact, int current)
 {
     std::string op;
 
-    show_all_contacts(contact);
+    show_all_contacts(contact, current);
     return (1);
 }

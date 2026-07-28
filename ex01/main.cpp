@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:49:31 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 14:46:12 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 17:20:46 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,22 @@ int main(void)
         std::cout << "[   ADD  ] -- Create a new contact\n";
         std::cout << "[ SEARCH ] -- Find my Contacts\n";
         std::cout << "[  EXIT  ] -- Exit and clean contacts\n";
-        std::getline(std::cin, op);
-
+        if(!std::getline(std::cin, op))
+            return (1);
         op = toUpper(op);
         if (op == "ADD")
-            add_contact(contact);
+        {
+            if (!add_contact(contact))
+                return (1);
+        }
         else if (op == "SEARCH")
-            search(contact);
+        {
+            if (!search(contact))
+                return (1);
+        }
         else if (op == "EXIT")
         {
-            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-            std::cout << "  ⏻ Saindo do phonebook Mr bug 1.0...\n";
-            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+            exit_progam_message();
             break ;
         }
         else

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   exit_program_message.cpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/27 16:53:44 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 16:23:39 by lluzembo         ###   ########.fr       */
+/*   Created: 2026/07/28 16:21:47 by lluzembo          #+#    #+#             */
+/*   Updated: 2026/07/28 16:36:02 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
-# include <iostream>
-# include <cstdlib>
-# include <cstring>
-# include "contact.hpp"
+#include "utils.hpp"
 
-int     add_contact(Contact &contact);
-int     search(Contact &contact);
-void    exit_progam_message();
-#endif
+void    exit_progam_message()
+{
+    std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    std::cout << "  ⏻ exiting phonebook Mr bug 1.0...\n";
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    return ;
+}

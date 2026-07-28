@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 19:57:25 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 19:51:12 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 19:55:14 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int    see_specific_contact(Contact *contact, int id)
     std::cout << " NICKNAME : " << contact[id].getNickname() << "\n";
     std::cout << " PHONE NUMBER: " <<  contact[id].getPhoneNumber() << "\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
+    std::system("sleep 10");
     return (1);
 }
 
@@ -98,7 +99,7 @@ int    show_all_contacts(Contact *contact, int current)
         std::cout << "[0 - 7] to see specify contact\n";
         if(!std::getline(std::cin, op))
             return (0);
-        if (op.length() == 1 && op[0] >= '1' && op[0] <= '8')
+        if (op.length() == 1 && op[0] >= '0' && op[0] <= '7')
             see_specific_contact(contact, op[0] - 48);
         else
             return (std::cout << "Invalid option...\n", 1);

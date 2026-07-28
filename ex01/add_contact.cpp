@@ -1,6 +1,6 @@
 #include "utils.hpp"
 
-void save_name(Contact contact)
+void save_name(Contact &contact)
 {
     std::string firstname;
     size_t         i;
@@ -20,7 +20,7 @@ void save_name(Contact contact)
     contact.setName(firstname);
 }
 
-void    save_surname(Contact contact)
+void    save_surname(Contact &contact)
 {
     std::string surname;
     size_t         i;
@@ -55,18 +55,18 @@ void    save_surname(Contact contact)
 
 }
 
-void    save_nickname(Contact contact)
+void    save_nickname(Contact &contact)
 {
     std::string nickname;
 
     std::cout << "Write the nickname:\t";
     std::getline(std::cin, nickname);
-    contact.setName(nickname);
+    contact.setNickname(nickname);
 
 }
 
 
-void    save_number(Contact contact)
+void    save_number(Contact &contact)
 {
     std::string phonenumber;
 
@@ -74,7 +74,7 @@ void    save_number(Contact contact)
     std::getline(std::cin, phonenumber);
     contact.setPhonenumber(phonenumber);
 }
-void    add_contact(Contact contact)
+void    add_contact(Contact &contact)
 {
         std::string surname;
         std::string nickname;

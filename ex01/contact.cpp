@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 14:18:42 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 17:48:39 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/28 11:12:39 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,21 @@
 std::string Contact::getName()
 {
     return name;
+}
+
+std::string Contact::getNickname()
+{
+    return nickname;
+}
+
+std::string Contact::getSurname()
+{
+    return surname;
+}
+
+std::string Contact::getPhoneNumber()
+{
+    return phonenumber;
 }
 
 void    Contact::setName(std::string newName)

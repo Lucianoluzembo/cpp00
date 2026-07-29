@@ -134,7 +134,7 @@ int    save_dark_secret(Contact &contact)
     contact.setDarkSecret(darksecret);
     return (1);
 }
-int    PhoneBook::add_contact()
+int    PhoneBook::addContact()
 {
       
         std::system("clear");

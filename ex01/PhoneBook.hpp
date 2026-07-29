@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 12:21:53 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 18:26:27 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 20:10:28 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PhoneBook
         Contact contact[8];
     public:
         PhoneBook();
-        int add_contact();
+        int addContact();
         int search_contact();
 
 };

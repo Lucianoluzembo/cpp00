@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:49:31 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 14:47:36 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 20:10:28 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
             return (exit_progam_message(), 1);
         if (op == "ADD")
         {
-            if (!phonebook.add_contact())
+            if (!phonebook.addContact())
                 return (1);
         }
         else if (op == "SEARCH")

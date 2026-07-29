@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 19:57:25 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 13:39:49 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 14:52:06 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ int    see_specific_contact(Contact *contact, int id)
 {
     std::string name =  contact[id].getName();
     if (name.empty())
-        return ((std::cout << "              data not found\n"), 0);
-    std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
-    std::cout << "|   Phone Book mr bug 1.0 see contact   [" << id << "] |\n";
-    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
-    std::cout << " NAME : " << contact[id].getName() << "\n";
-    std::cout << " SURNAME : " << contact[id].getSurname() << "\n";
-    std::cout << " NICKNAME : " << contact[id].getNickname() << "\n";
-    std::cout << " DARK SECRET: " <<  contact[id].getDarkSecret() << "\n";
-    std::cout << " PHONE NUMBER: " <<  contact[id].getPhoneNumber() << "\n";
+        return ((std::cout << "              data not found" << std::endl), 0);
+    std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+" << std::endl;
+    std::cout << "|   Phone Book mr bug 1.0 see contact   [" << id << "] |" << std::endl;
+    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+" << std::endl;
+    std::cout << " NAME : " << contact[id].getName() << std::endl;
+    std::cout << " SURNAME : " << contact[id].getSurname() << std::endl;
+    std::cout << " NICKNAME : " << contact[id].getNickname() << std::endl;
+    std::cout << " DARK SECRET: " <<  contact[id].getDarkSecret() << std::endl;
+    std::cout << " PHONE NUMBER: " <<  contact[id].getPhoneNumber() << std::endl;
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
     return (1);
 }
@@ -75,11 +75,11 @@ int    show_all_contacts(Contact *contact, int current)
 
 
     std::system("clear");
-    std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
-    std::cout << "|   Phone Book mr bug 1.0   My contacts     |\n";
-    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
-    std::cout << "|     INDEX|      NAME|   SURNAME|  NICKNAME|\n";
-    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
+    std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+" << std::endl;
+    std::cout << "|   Phone Book mr bug 1.0   My contacts     |" << std::endl;
+    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+" << std::endl;
+    std::cout << "|     INDEX|      NAME|   SURNAME|  NICKNAME|" << std::endl;
+    std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+" << std::endl;
 
     while(i < current)
     {
@@ -91,18 +91,18 @@ int    show_all_contacts(Contact *contact, int current)
         print_phone_book_collum(name);
         print_phone_book_collum(surname);
         print_phone_book_collum(nickname);
-        std::cout << "\n+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
+        std::cout << "\n+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+" << std::endl;
         i++;
     }
     while (true)
     {
-        std::cout << "[0 - 7] to see specify contact\n";
+        std::cout << "[0 - 7] to see specify contact" << std::endl;
         if(!std::getline(std::cin, op))
             return (0);
         if (op.length() == 1 && op[0] >= '0' && op[0] <= '7')
             see_specific_contact(contact, op[0] - 48);
         else
-            return (std::cout << "Invalid option...\n", 1);
+            return (std::cout << "Invalid option..." << std::endl, 1);
     }
 }
 

@@ -6,7 +6,7 @@ int valid_number(std::string str)
 
     if (!(str.length() >= 1 && str.length() <= 15))
     {
-        std::cout << "invalid number size use [1 - 15]\n";
+        std::cout << "invalid number size use [1 - 15]" << std::endl;
         return (0);
     }
     i = 0;
@@ -14,7 +14,7 @@ int valid_number(std::string str)
     {
         if (!std::isdigit(str[i]))
         {
-            std::cout << "Invalid char on number use just digit\n";
+            std::cout << "Invalid char on number use just digit" << std::endl;
             return (0);
         }
         i++;
@@ -32,7 +32,7 @@ int valid_input(std::string str)
     {
         if (std::iscntrl(str[i]))
         {
-            std::cout << "Invalid control caracter\n";
+            std::cout << "Invalid control caracter" << std::endl;
             return (0);
         }
         i++;
@@ -54,7 +54,7 @@ int valid_name(std::string str)
     {
         if (std::strchr("0123456789 ", str[i]))
         {
-            std::cout << "Invalid input don't use number or space in this field\n";
+            std::cout << "Invalid input don't use number or space in this field" << std::endl;
             return (0);
         }
         else if (str[i] == 92)
@@ -144,9 +144,9 @@ int    PhoneBook::add_contact()
 {
       
         std::system("clear");
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        std::cout << "[   ADD  ] -- Create a new contact\n";
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+        std::cout << "[   ADD  ] -- Create a new contact" << std::endl;
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
         if (!save_name(contact[current % 8]))
             return (0);
         else if (!save_surname(contact[current % 8]))

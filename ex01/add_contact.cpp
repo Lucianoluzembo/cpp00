@@ -141,16 +141,16 @@ int    PhoneBook::add_contact()
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
         std::cout << "[   ADD  ] -- Create a new contact" << std::endl;
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
-        if (!save_name(contact[current % 8]))
+        if (!save_name(contact[_current % 8]))
             return (0);
-        else if (!save_surname(contact[current % 8]))
+        else if (!save_surname(contact[_current % 8]))
             return (0);
-        else if (!save_nickname(contact[current % 8]))
+        else if (!save_nickname(contact[_current % 8]))
             return (0);
-        else if (!save_number(contact[current % 8]))
+        else if (!save_number(contact[_current % 8]))
             return (0);
-        else if (!save_dark_secret(contact[current % 8]))
+        else if (!save_dark_secret(contact[_current % 8]))
             return (0);
-        current++;
+        _current++;
         return (1);
 }

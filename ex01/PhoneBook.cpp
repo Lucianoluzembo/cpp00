@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 12:59:43 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 13:02:29 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:34:49 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 PhoneBook::PhoneBook()
 {
-    current = 0; 
-    tot_contacts = 0;
+    _current = 0; 
+    _contacts = 0;
 }

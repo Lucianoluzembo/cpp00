@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 14:18:42 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 15:23:43 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:25:31 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,51 @@
 
 std::string Contact::getName()
 {
-    return name;
+    return _name;
 }
 
 std::string Contact::getNickname()
 {
-    return nickname;
+    return _nickname;
 }
 
 std::string Contact::getSurname()
 {
-    return surname;
+    return _surname;
 }
 
 std::string Contact::getPhoneNumber()
 {
-    return phonenumber;
-}
-
-void    Contact::setName(std::string newName)
-{
-    name = newName;
-}
-
-void    Contact::setNickname(std::string newNickname)
-{
-    nickname = newNickname;
-}
-
-void    Contact::setSurname(std::string newSurname)
-{
-    surname = newSurname;
-}
-
-void        Contact::setPhonenumber(std::string newPhonenumber)
-{
-    phonenumber = newPhonenumber;
+    return _phonenumber;
 }
 
 std::string Contact::getDarkSecret()
 {
-    return darksecret;
+    return _darksecret;
+}
+
+void    Contact::setName(std::string newName)
+{
+    _name = newName;
+}
+
+void    Contact::setNickname(std::string newNickname)
+{
+    _nickname = newNickname;
+}
+
+void    Contact::setSurname(std::string newSurname)
+{
+    _surname = newSurname;
+}
+
+void        Contact::setPhonenumber(std::string newPhonenumber)
+{
+    _phonenumber = newPhonenumber;
 }
 
 void Contact::setDarkSecret(std::string newDarkSecret)
 {
-    darksecret = newDarkSecret;
+    _darksecret = newDarkSecret;
 }
 

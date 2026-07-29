@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 14:37:48 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 10:38:06 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:22:13 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 class Contact
 {
     private:
-       std::string name;
-       std::string surname;
-       std::string nickname;
-       std::string phonenumber;
-       std::string darksecret;
+       std::string _name;
+       std::string _surname;
+       std::string _nickname;
+       std::string _phonenumber;
+       std::string _darksecret;
 
     public:
         std::string getName();

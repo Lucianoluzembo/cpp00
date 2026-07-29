@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lluzembo <lluzembo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:04:56 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/27 12:14:07 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:10:52 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int ac, char **av)
 {
     int i;
-    int j;
+    size_t j;
 
     if (ac < 2)
     {
@@ -26,11 +26,10 @@ int main(int ac, char **av)
     while (av[i])
     {
         j = 0;
-        while (av[i][j])
+        std::string ag(av[i]);
+        while (j < ag.length())
         {
-            if (av[i][j] >= 'a' && av[i][j] <= 'z')
-                av[i][j] -= 32;
-            std::cout << av[i][j];
+            std::cout << static_cast <char>(std::toupper(ag[j]));
             j++;
         }
         i++;

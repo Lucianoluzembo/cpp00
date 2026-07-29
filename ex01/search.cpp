@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 19:57:25 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 14:52:06 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:27:08 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,9 @@ int    show_all_contacts(Contact *contact, int current)
 
 int    PhoneBook::search_contact()
 {
-    tot_contacts = current;
-    if (current > 8)
-        tot_contacts = 8;
-    show_all_contacts(contact, current);
+    _contacts = _current;
+    if (_current > 8)
+        _contacts = 8;
+    show_all_contacts(contact, _contacts);
     return (1);
 }

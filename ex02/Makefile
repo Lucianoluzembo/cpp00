@@ -5,35 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/28 12:08:02 by lluzembo          #+#    #+#              #
-#    Updated: 2026/07/29 20:30:28 by lluzembo         ###   ########.fr        #
+#    Created: 2026/07/29 20:22:16 by lluzembo          #+#    #+#              #
+#    Updated: 2026/07/29 20:31:06 by lluzembo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = account
 
 CXX = c++
 
+HEADER = Account.hpp
+
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDE = utils.hpp  PhoneBook.hpp Contact.hpp
-
-SRC = ./main.cpp addContact.cpp Contact.cpp search.cpp\
-		exit_program_message.cpp PhoneBook.cpp
+SRC = Account.cpp tests.cpp 
 
 OBJS = $(SRC:.cpp=.o)
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(OBJS)
 
-$(OBJS):$(INCLUDE)
+$(OBJS): $(HEADER)
 
 clean:
 	rm -rf $(OBJS)
 fclean: clean
 	rm -rf $(NAME)
-re:fclean all
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: clean fclean re all
+

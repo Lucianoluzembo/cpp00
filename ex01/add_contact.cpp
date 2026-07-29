@@ -74,9 +74,7 @@ int save_name(Contact &contact)
     std::cout << "Write the first name:\t";
     if(!std::getline(std::cin, firstname))
         return (exit_progam_message(), 0);
-    if (!valid_input(firstname))
-         return (exit_progam_message(), 0);
-    if (!valid_name(firstname))
+    if (!valid_input(firstname) || !valid_name(firstname))
         return(save_name(contact));
     contact.setName(firstname);
     return (1);
@@ -89,9 +87,7 @@ int    save_surname(Contact &contact)
     std::cout << "Write the surname:\t";
     if (!std::getline(std::cin, surname))
         return (exit_progam_message(), 0);
-    if (!valid_input(surname))
-        return (exit_progam_message(), 0);
-    if (!valid_name(surname))
+    if (!valid_input(surname) || !valid_name(surname))
         return (save_surname(contact));
     contact.setSurname(surname);
     return (1);
@@ -105,8 +101,6 @@ int    save_nickname(Contact &contact)
     if (!std::getline(std::cin, nickname))
         return (exit_progam_message(), 0);
     if (!valid_input(nickname))
-         return (exit_progam_message(), 0);
-    if (nickname.empty())
         return(save_nickname(contact));
     contact.setNickname(nickname);
     return (1);

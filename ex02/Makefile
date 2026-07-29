@@ -6,7 +6,7 @@
 #    By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/29 20:22:16 by lluzembo          #+#    #+#              #
-#    Updated: 2026/07/29 20:31:06 by lluzembo         ###   ########.fr        #
+#    Updated: 2026/07/29 22:01:25 by lluzembo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): $(HEADER)
 

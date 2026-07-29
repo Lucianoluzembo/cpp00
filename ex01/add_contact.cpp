@@ -127,23 +127,36 @@ int    save_number(Contact &contact)
     contact.setPhonenumber(phonenumber);
     return (1);
 }
-int    add_contact(Contact *contact, int current)
+
+int    save_dark_secret(Contact &contact)
 {
-        std::string surname;
-        std::string nickname;
-        std::string phonenumber;
-        
+    std::string darksecret;
+
+    std::cout << "Write the dark secret:\t";
+    if (!std::getline(std::cin, darksecret))
+        return (0);
+    if (!valid_input(darksecret))
+        return (exit_progam_message(), 0);
+    contact.setDarkSecret(darksecret);
+    return (1);
+}
+int    PhoneBook::add_contact()
+{
+      
         std::system("clear");
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         std::cout << "[   ADD  ] -- Create a new contact\n";
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        if (!save_name(contact[current]))
+        if (!save_name(contact[current % 8]))
             return (0);
-        else if (!save_surname(contact[current]))
+        else if (!save_surname(contact[current % 8]))
             return (0);
-        else if (!save_nickname(contact[current]))
+        else if (!save_nickname(contact[current % 8]))
             return (0);
-        else if (!save_number(contact[current]))
+        else if (!save_number(contact[current % 8]))
             return (0);
+        else if (!save_dark_secret(contact[current % 8]))
+            return (0);
+        current++;
         return (1);
 }

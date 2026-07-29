@@ -6,7 +6,7 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 19:57:25 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 19:55:14 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 13:39:49 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int    see_specific_contact(Contact *contact, int id)
     if (name.empty())
         return ((std::cout << "              data not found\n"), 0);
     std::cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n";
-    std::cout << "|   Phone Book mr bug 1.0  contact      [" << id << "   |\n";
+    std::cout << "|   Phone Book mr bug 1.0 see contact   [" << id << "] |\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
     std::cout << " NAME : " << contact[id].getName() << "\n";
     std::cout << " SURNAME : " << contact[id].getSurname() << "\n";
     std::cout << " NICKNAME : " << contact[id].getNickname() << "\n";
+    std::cout << " DARK SECRET: " <<  contact[id].getDarkSecret() << "\n";
     std::cout << " PHONE NUMBER: " <<  contact[id].getPhoneNumber() << "\n";
     std::cout << "+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+~~~~~~~~~~+\n";
-    std::system("sleep 10");
     return (1);
 }
 
@@ -106,10 +106,11 @@ int    show_all_contacts(Contact *contact, int current)
     }
 }
 
-int    search(Contact *contact, int current)
+int    PhoneBook::search_contact()
 {
-    std::string op;
-
+    tot_contacts = current;
+    if (current > 8)
+        tot_contacts = 8;
     show_all_contacts(contact, current);
     return (1);
 }

@@ -6,32 +6,16 @@
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:49:31 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 19:21:45 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 12:53:53 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
-// std::string toUpper(std::string str)
-// {
-//     size_t i = 0;
-
-//     while (str.length() > i)
-//     {
-//         if (str[i] >= 'a' && str[i] <= 'z')
-//             str[i] -= 32;
-//         i++;
-//     }
-//     return (str);
-// }
-
 int main(void)
 {
     std::string op;
-    Contact contact[8];
-    int current = 0; 
-
-
+    PhoneBook phonebook;
     while(true)
     {
         std::system("clear");
@@ -46,14 +30,12 @@ int main(void)
             return (exit_progam_message(), 1);
         if (op == "ADD")
         {
-            if (!add_contact(contact, current % 8))
+            if (!phonebook.add_contact())
                 return (1);
-            else
-                current++;
         }
         else if (op == "SEARCH")
         {
-            if (!search(contact, current))
+            if (!phonebook.search_contact())
                 return (1);
         }
         else if (op == "EXIT")

@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/27 16:53:44 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/29 12:41:04 by lluzembo         ###   ########.fr       */
+/*   Created: 2026/07/29 12:59:43 by lluzembo          #+#    #+#             */
+/*   Updated: 2026/07/29 13:02:29 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
-# include <iostream>
-# include <cstdlib>
-# include <cstring>
-# include "Contact.hpp"
-# include "PhoneBook.hpp"
+#include "PhoneBook.hpp"
 
-int     add_contact(Contact *contact, int current);
-int     search(Contact *contact, int current);
-void    exit_progam_message();
-#endif
+PhoneBook::PhoneBook()
+{
+    current = 0; 
+    tot_contacts = 0;
+}

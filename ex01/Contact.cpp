@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lluzembo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 14:18:42 by lluzembo          #+#    #+#             */
-/*   Updated: 2026/07/28 11:12:39 by lluzembo         ###   ########.fr       */
+/*   Updated: 2026/07/29 12:59:23 by lluzembo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 std::string Contact::getName()
 {
@@ -50,5 +50,15 @@ void    Contact::setSurname(std::string newSurname)
 void        Contact::setPhonenumber(std::string newPhonenumber)
 {
     phonenumber = newPhonenumber;
+}
+
+std::string Contact::getDarkSecret()
+{
+    return darksecret;
+}
+
+void Contact::setDarkSecret(std::string newDarkSecret)
+{
+    darksecret = newDarkSecret;
 }
 

@@ -52,9 +52,9 @@ int valid_name(std::string str)
     }
     while(i < str.length())
     {
-        if (std::strchr("0123456789 ", str[i]))
+        if (!std::strchr("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", str[i]))
         {
-            std::cout << "Invalid input don't use number or space in this field" << std::endl;
+            std::cout << "Invalid input use just letter in this field" << std::endl;
             return (0);
         }
         else if (str[i] == 92)

@@ -128,6 +128,6 @@ void	Account::displayAccountsInfos()
     std::cout << "accounts:" << _nbAccounts << ";";
     std::cout << "total:" << _totalAmount << ";";
     std::cout << "deposits:" << _totalNbDeposits << ";";
-    std::cout << "withdrawals:" << _totalNbWithdrawals << ";\n";
+    std::cout << "withdrawals:" << _totalNbWithdrawals << "\n";
     return ;
 }
